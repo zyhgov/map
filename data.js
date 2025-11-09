@@ -9,8 +9,8 @@ const locations = [
     { name: '郑州', coord: [113.6254, 34.7466], type: 'past', description: '在这里生活过一段时间' },
     { name: '开封', coord: [114.3076, 34.7972], type: 'past', description: '在这里生活过一段时间' },
     { name: '兰考县', coord: [114.8186, 34.8222], type: 'past', description: '在这里生活过一段时间，在这里考的驾驶证。' },
-    { name: '襄阳', coord: [112.1224, 32.0090], type: 'past', description: '在这里读大学生活学习' },
-    { name: '襄阳职业技术学院', coord: [112.083233,32.005619], type: 'past', description: '在这里读大学生活学习' },
+    // { name: '襄阳', coord: [112.1224, 32.0090], type: 'past', description: '在这里读大学生活学习' },
+    // { name: '襄阳职业技术学院', coord: [112.083233,32.005619], type: 'past', description: '在这里读大学生活学习' },
     { name: '荆州', coord: [112.2397, 30.3352], type: 'past', description: '在这里生活过一段时间' },
     { name: '公安县', coord: [112.2295, 30.0583], type: 'past', description: '在这里读的高中' },
     { name: '石首市', coord: [112.4257, 29.7209], type: 'past', description: '在这里生活过一段时间' },
@@ -24,7 +24,7 @@ const locations = [
     { name: '泰州', coord: [119.9231, 32.4558], type: 'past', description: '在这里旅游过' },
     { name: '重庆', coord: [106.5516, 29.5630], type: 'past', description: '在这里旅游过' },
     { name: '云阳县', coord: [108.6973, 30.9306], type: 'work', description: '在这里工作过一段时间' },
-    { name: '国家电网（双土供电营业厅）', coord: [108.921805,31.155217], type: 'sgcc', description: '2024年10月在这里开始第一段实习工作，在国家电网负责计量箱设备的维护统计。' },
+    { name: '国家电网（双土供电营业厅）', coord: [108.921805,31.155217], type: 'sgcc', description: '2024年9月在这里开始第一段实习工作，在国家电网负责计量箱设备的维护统计。' },
     { name: '小河口镇', coord: [112.62323, 29.776849], type: 'past', description: '在这过年' },
     { name: '浏阳市君悦阳光里', coord: [113.61335,28.16805], type: 'past', description: '在这居住' },
     { name: '浏阳市官渡古镇', coord: [113.88681,28.347944], type: 'past', description: '官渡古镇' },
@@ -32,8 +32,8 @@ const locations = [
     { name: '青海省西宁市锦程嘉苑小区', coord: [101.752593,36.638384], type: 'past', description: '在这里居住工作' },
     { name: '国家电网综合大楼', coord: [101.754968,36.636605], type: 'sgcc', description: '青海省西宁市城西区新宁路与西交通巷交叉口西北60米' },
     { name: '西宁市自然资源和规划局', coord: [101.745755,36.636307], type: 'chinagov', description: '在西宁市自然资源和规划局参与地理信息系统数据治理。' },
-    { name: 'IFC国际金融中心', coord: [114.274388,30.591705], type: 'current', description: '在这里做系统运维。' },
-    { name: '国家税务总局湖北省税务局第三税务分局', coord: [114.344578,30.552697], type: 'chinagov', description: '在这里做核心征管税务系统运维。' },
+    { name: 'IFC国际金融中心', coord: [114.274388,30.591705], type: 'current', description: '在此处做系统运维与技术支持。' },
+    { name: '国家税务总局湖北省税务局第三税务分局', coord: [114.344578,30.552697], type: 'chinagov', description: '在中国软件这里做驻点核心征管税务系统运维。' },
     // 计划去的地方
     // { name: '青海西宁市', coord: [101.7782, 36.6171], type: 'future', description: '计划前往的目的地，2025工作地点' }
 ];
@@ -256,5 +256,6 @@ const routes = [
         ]
     }
 ];
+
 
 
