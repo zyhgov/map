@@ -50,15 +50,15 @@ function initMap() {
         strokeStyle: 'solid', // 线型
         strokeDasharray: [10, 5] // 虚线样式
     });
-    const polygon3 = new AMap.Polygon({
-        path: areaCoords3,
-        fillColor: 'rgba(65, 255, 78, 0.2)', // 半透明橙色
-        strokeColor: '#00544a', // 边框颜色
-        strokeWeight: 2.5, // 线宽
-        fillOpacity: 0.1, // 透明度
-        strokeStyle: 'solid', // 线型
-        strokeDasharray: [10, 5] // 虚线样式
-    });
+    // const polygon3 = new AMap.Polygon({
+    //     path: areaCoords3,
+    //     fillColor: 'rgba(65, 255, 78, 0.2)', // 半透明橙色
+    //     strokeColor: '#00544a', // 边框颜色
+    //     strokeWeight: 2.5, // 线宽
+    //     fillOpacity: 0.1, // 透明度
+    //     strokeStyle: 'solid', // 线型
+    //     strokeDasharray: [10, 5] // 虚线样式
+    // });
     const polygon4 = new AMap.Polygon({
         path: areaCoords4,
         fillColor: 'rgba(65, 255, 78, 0.2)', // 半透明橙色
@@ -114,7 +114,7 @@ function initMap() {
         strokeDasharray: [10, 5] // 虚线样式
     });
     // 将多边形添加到地图
-    map.add([polygon1,polygon2,polygon3,polygon4,polygon5,polygon6,polygon7,polygon8,polygon9]);
+    map.add([polygon1,polygon2,polygon4,polygon5,polygon6,polygon7,polygon8,polygon9]);
 
     // 调整视野适应区域
     map.setFitView([polygon8]);
@@ -342,3 +342,4 @@ setInterval(() => {
 
 // 初始化
 window.onload = initMap;
+
