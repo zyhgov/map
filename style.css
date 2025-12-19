@@ -5,10 +5,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-family: 'PingFang SC Medium', 'San Francisco', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
     overflow: hidden;
 }
 
@@ -52,4 +53,332 @@ body {
     font-size: 1.2rem;
     color: #666;
     animation: fadeIn 0.5s ease;
+}
+
+/* ================================
+   Apple 风格模态弹窗
+   ================================ */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-overlay.fade-out {
+    animation: modalFadeOut 0.3s ease forwards;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalFadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.modal-container {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    animation: modalSlideUp 0.3s ease;
+    text-align: center;
+}
+
+.modal-overlay.fade-out .modal-container {
+    animation: modalSlideDown 0.3s ease forwards;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes modalSlideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+}
+
+/* 关闭按钮 */
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #f5f5f7;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #86868b;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #e8e8ed;
+    color: #1d1d1f;
+}
+
+.modal-close:active {
+    transform: scale(0.95);
+}
+
+/* 图标 */
+.modal-icon {
+    margin-bottom: 16px;
+}
+
+/* 标题 */
+.modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+}
+
+/* 内容 */
+.modal-content {
+    color: #424245;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    margin: 0 0 12px 0;
+}
+
+.modal-content p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-content strong {
+    color: #1d1d1f;
+    font-weight: 600;
+}
+
+.modal-content .highlight {
+    color: #0071e3;
+    font-weight: 600;
+}
+
+/* 信息卡片 */
+.modal-info-card {
+    background: #f5f5f7;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.info-row:first-child {
+    padding-top: 0;
+}
+
+.info-row:last-child {
+    padding-bottom: 0;
+}
+
+.info-row:not(:last-child) {
+    border-bottom: 1px solid #e8e8ed;
+}
+
+.info-label {
+    font-size: 14px;
+    color: #86868b;
+}
+
+.info-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.status-archived {
+    color: #ff9500;
+}
+
+/* 按钮组 */
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: #0071e3;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #0077ed;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background: #f5f5f7;
+    color: #1d1d1f;
+}
+
+.btn-secondary:hover {
+    background: #e8e8ed;
+}
+
+.btn-secondary:active {
+    transform: scale(0.98);
+}
+
+/* 底部文字 */
+.modal-footer-text {
+    font-size: 13px;
+    color: #86868b;
+    margin: 0;
+}
+
+/* 响应式 */
+@media (max-width: 480px) {
+    .modal-container {
+        padding: 24px;
+        border-radius: 16px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+
+    .modal-content {
+        font-size: 14px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 16px;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    .modal-container {
+        background: #1c1c1e;
+    }
+
+    .modal-close {
+        background: #2c2c2e;
+        color: #98989d;
+    }
+
+    .modal-close:hover {
+        background: #3a3a3c;
+        color: #f5f5f7;
+    }
+
+    .modal-title {
+        color: #f5f5f7;
+    }
+
+    .modal-content {
+        color: #98989d;
+    }
+
+    .modal-content strong {
+        color: #f5f5f7;
+    }
+
+    .modal-info-card {
+        background: #2c2c2e;
+    }
+
+    .info-row:not(:last-child) {
+        border-bottom-color: #3a3a3c;
+    }
+
+    .info-label {
+        color: #98989d;
+    }
+
+    .info-value {
+        color: #f5f5f7;
+    }
+
+    .btn-secondary {
+        background: #2c2c2e;
+        color: #f5f5f7;
+    }
+
+    .btn-secondary:hover {
+        background: #3a3a3c;
+    }
+
+    .modal-footer-text {
+        color: #98989d;
+    }
 }
